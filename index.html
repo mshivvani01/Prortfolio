@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pixel & Co. — Business Websites That Convert</title>
+<meta name="google-site-verification" content="3JmTHCDwsQs4p-u1D9AxuRKzDlxiG1GWQsfCt_nPEhw" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f1f3d'/%3E%3Crect x='4' y='4' width='11' height='11' rx='2.5' fill='%23ffffff'/%3E%3Crect x='17' y='4' width='11' height='11' rx='2.5' fill='%23c9a84c'/%3E%3Crect x='4' y='17' width='11' height='11' rx='2.5' fill='%23c9a84c' opacity='0.55'/%3E%3Crect x='17' y='17' width='11' height='11' rx='2.5' fill='%23ffffff'/%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy:       #0f1f3d;
+  --navy-mid:   #1a3260;
+  --navy-light: #243d72;
+  --navy-muted: #3d5a8a;
+  --white:      #ffffff;
+  --off-white:  #f8f9fc;
+  --soft-white: #eef1f7;
+  --mid:        #6b7a99;
+  --accent:     #c9a84c;
+  --accent-lt:  #f0e0a8;
+  --success:    #3ecf8e;
+  --shadow-sm:  0 2px 12px rgba(15,31,61,0.08);
+  --shadow-md:  0 8px 32px rgba(15,31,61,0.12);
+  --shadow-lg:  0 24px 64px rgba(15,31,61,0.16);
+  --shadow-3d:  0 20px 60px rgba(15,31,61,0.18), 0 4px 16px rgba(15,31,61,0.1);
+  --r:          18px;
+  --r-sm:       10px;
+  --ease:       cubic-bezier(0.4,0,0.2,1);
+  --t:          all 0.35s var(--ease);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background:var(--off-white);
+  color:var(--navy);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--soft-white);}
+::-webkit-scrollbar-thumb{background:var(--navy-muted);border-radius:3px;}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  background:rgba(248,249,252,0.9);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(15,31,61,0.07);
+  padding:0 6%;height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:var(--t);
+}
+nav.scrolled{
+  background:rgba(255,255,255,0.96);
+  box-shadow:var(--shadow-sm);
+}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-mark{
+  width:36px;height:36px;background:var(--navy);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;position:relative;
+  box-shadow:0 4px 12px rgba(15,31,61,0.25);flex-shrink:0;
+}
+.logo-mark svg{width:20px;height:20px;}
+.logo-text{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--navy);letter-spacing:-0.01em;}
+.logo-text span{color:var(--accent);}
+.nav-links{display:flex;gap:2.2rem;list-style:none;}
+.nav-links a{text-decoration:none;font-size:0.87rem;font-weight:500;color:var(--mid);letter-spacing:0.01em;transition:color 0.2s;}
+.nav-links a:hover{color:var(--navy);}
+.nav-cta{
+  background:var(--navy);color:var(--white)!important;padding:0.55rem 1.4rem;border-radius:50px;
+  font-size:0.85rem!important;font-weight:600!important;box-shadow:0 4px 16px rgba(15,31,61,0.22);transition:var(--t)!important;
+}
+.nav-cta:hover{background:var(--navy-mid)!important;transform:translateY(-1px);box-shadow:0 6px 20px rgba(15,31,61,0.3)!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:11px;margin:-11px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:var(--t);}
+.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{
+  display:none;position:fixed;top:68px;left:0;right:0;z-index:998;
+  background:var(--white);border-bottom:1px solid var(--soft-white);
+  padding:1.5rem 6%;flex-direction:column;gap:1.4rem;box-shadow:var(--shadow-md);
+}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{text-decoration:none;font-size:1rem;font-weight:500;color:var(--navy);}
+#hero{min-height:100vh;display:flex;align-items:center;padding:80px 6% 60px;position:relative;overflow:hidden;background:var(--white);}
+.hero-bg-shapes{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.hero-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.07;}
+.hero-blob-1{width:600px;height:600px;background:var(--navy);top:-150px;right:-100px;}
+.hero-blob-2{width:400px;height:400px;background:var(--accent);bottom:-100px;left:10%;}
+.hero-grid{
+  position:absolute;inset:0;z-index:0;
+  background-image:linear-gradient(rgba(15,31,61,0.04) 1px, transparent 1px),linear-gradient(90deg, rgba(15,31,61,0.04) 1px, transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 70% 70% at 70% 40%, black 30%, transparent 80%);
+}
+.hero-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;background:var(--soft-white);border:1px solid rgba(15,31,61,0.1);
+  padding:0.4rem 1rem;border-radius:50px;font-size:0.78rem;font-weight:600;color:var(--navy-muted);
+  letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.8rem;animation:fadeUp 0.5s ease both;
+}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--success);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(62,207,142,0.4);}50%{box-shadow:0 0 0 5px rgba(62,207,142,0);}}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4vw,3.8rem);font-weight:800;line-height:1.1;color:var(--navy);margin-bottom:1.4rem;animation:fadeUp 0.5s 0.1s ease both;}
+.hero-title em{color:var(--accent);font-style:italic;}
+.hero-sub{font-size:1.05rem;color:var(--mid);line-height:1.75;max-width:440px;margin-bottom:2.5rem;animation:fadeUp 0.5s 0.2s ease both;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.5s 0.3s ease both;}
+.btn-primary{
+  background:var(--navy);color:var(--white);padding:0.9rem 2.2rem;border-radius:50px;font-size:0.95rem;font-weight:600;
+  text-decoration:none;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:9px;transition:var(--t);
+  box-shadow:0 6px 24px rgba(15,31,61,0.25);
+}
+.btn-primary:hover{background:var(--navy-mid);transform:translateY(-2px);box-shadow:0 10px 32px rgba(15,31,61,0.3);}
+.btn-outline{
+  background:transparent;color:var(--navy);padding:0.9rem 2.2rem;border-radius:50px;font-size:0.95rem;font-weight:600;
+  text-decoration:none;cursor:pointer;border:1.5px solid rgba(15,31,61,0.18);display:inline-flex;align-items:center;gap:9px;transition:var(--t);
+}
+.btn-outline:hover{border-color:var(--navy);background:rgba(15,31,61,0.04);transform:translateY(-2px);}
+.hero-visual{display:flex;justify-content:center;align-items:center;animation:fadeUp 0.6s 0.2s ease both;}
+.hero-card-mockup{
+  width:100%;max-width:400px;background:var(--white);border-radius:24px;box-shadow:var(--shadow-3d);overflow:hidden;
+  transform:perspective(1000px) rotateY(-6deg) rotateX(3deg);transition:transform 0.5s var(--ease);border:1px solid rgba(15,31,61,0.06);
+  position:relative;
+}
+.hero-card-mockup:hover{transform:perspective(1000px) rotateY(-2deg) rotateX(1deg);}
+.mockup-bar{height:40px;background:var(--soft-white);display:flex;align-items:center;gap:7px;padding:0 1rem;border-bottom:1px solid rgba(15,31,61,0.06);}
+.mockup-dot{width:11px;height:11px;border-radius:50%;}
+.mockup-dot:nth-child(1){background:#ff5f57;}
+.mockup-dot:nth-child(2){background:#febc2e;}
+.mockup-dot:nth-child(3){background:#28c840;}
+.mockup-url{flex:1;background:var(--white);border-radius:6px;height:22px;margin-left:10px;display:flex;align-items:center;padding:0 10px;font-size:0.68rem;color:var(--mid);border:1px solid rgba(15,31,61,0.08);}
+.mockup-screenshot-wrap{position:relative;height:280px;overflow:hidden;background:var(--soft-white);}
+.mockup-screenshot{width:100%;height:100%;object-fit:cover;object-position:top;display:block;}
+.mockup-fallback{display:none;position:absolute;inset:0;padding:1.4rem;background:var(--white);}
+.mockup-screenshot-wrap.img-fallback .mockup-screenshot{display:none;}
+.mockup-screenshot-wrap.img-fallback .mockup-fallback{display:block;}
+.mockup-hero-strip{background:var(--navy);border-radius:12px;height:110px;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.mockup-hero-strip::before{content:'';position:absolute;width:200px;height:200px;border-radius:50%;background:rgba(201,168,76,0.2);top:-60px;right:-60px;}
+.mockup-hero-text{color:var(--white);font-size:0.75rem;font-weight:700;font-family:'Playfair Display',serif;z-index:1;}
+.mockup-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:1rem;}
+.mockup-card-item{background:var(--soft-white);border-radius:8px;height:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
+.mockup-icon{width:20px;height:20px;border-radius:5px;background:var(--navy);opacity:0.15;}
+.mockup-line{height:5px;width:60%;border-radius:3px;background:rgba(15,31,61,0.1);}
+.mockup-rows{display:flex;flex-direction:column;gap:7px;}
+.mockup-row{height:9px;border-radius:4px;background:rgba(15,31,61,0.07);}
+.mockup-row:nth-child(2){width:80%;}
+.mockup-row:nth-child(3){width:60%;}
+.mockup-badge{
+  position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);background:var(--white);border-radius:50px;
+  padding:0.55rem 1.2rem;box-shadow:var(--shadow-md);font-size:0.76rem;font-weight:700;color:var(--navy);
+  display:flex;align-items:center;gap:7px;white-space:nowrap;border:1px solid rgba(15,31,61,0.06);
+}
+.mockup-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--success);}
+.hero-stats{display:flex;gap:2rem;margin-top:2.5rem;animation:fadeUp 0.5s 0.4s ease both;}
+.stat{display:flex;flex-direction:column;gap:2px;}
+.stat-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--navy);}
+.stat-label{font-size:0.78rem;color:var(--mid);font-weight:500;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+section{padding:100px 6%;}
+.container{max-width:1100px;margin:0 auto;}
+.section-tag{
+  display:inline-block;font-size:0.74rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy-muted);
+  background:var(--soft-white);border:1px solid rgba(15,31,61,0.1);padding:0.35rem 1rem;border-radius:50px;margin-bottom:1rem;
+}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:700;line-height:1.15;color:var(--navy);margin-bottom:1rem;}
+.section-sub{font-size:1rem;color:var(--mid);max-width:500px;line-height:1.7;}
+.section-head{margin-bottom:3.5rem;}
+.section-head.center{text-align:center;}
+.section-head.center .section-sub{margin:0 auto;}
+.divider{width:48px;height:3px;background:linear-gradient(90deg,var(--navy),var(--accent));border-radius:2px;margin:1.2rem 0;}
+.divider.center{margin:1.2rem auto;}
+#services{background:var(--white);}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.pricing-card{
+  background:var(--off-white);border:1px solid rgba(15,31,61,0.07);border-radius:var(--r);padding:2rem;position:relative;
+  transition:var(--t);transform:perspective(800px) rotateX(0deg);
+}
+.pricing-card:hover{transform:perspective(800px) translateY(-8px);box-shadow:var(--shadow-3d);border-color:rgba(15,31,61,0.14);}
+.pricing-card.featured{background:var(--navy);border-color:var(--navy);color:var(--white);}
+.featured-badge{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--navy);
+  font-size:0.74rem;font-weight:700;padding:0.3rem 1rem;border-radius:50px;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;
+}
+.pricing-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;}
+.pricing-card:not(.featured) .pricing-icon{background:var(--soft-white);}
+.pricing-card.featured .pricing-icon{background:rgba(255,255,255,0.1);}
+.pricing-icon svg{width:24px;height:24px;}
+.pricing-card:not(.featured) .pricing-icon svg{stroke:var(--navy);}
+.pricing-card.featured .pricing-icon svg{stroke:var(--accent);}
+.pricing-name{font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);margin-bottom:0.5rem;}
+.pricing-card.featured .pricing-name{color:rgba(255,255,255,0.6);}
+.pricing-price{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;color:var(--navy);margin-bottom:0.3rem;display:flex;align-items:baseline;gap:4px;}
+.pricing-card.featured .pricing-price{color:var(--white);}
+.pricing-price .currency{font-size:1.2rem;font-weight:600;margin-top:4px;}
+.pricing-note{font-size:0.8rem;color:var(--mid);margin-bottom:1.5rem;}
+.pricing-card.featured .pricing-note{color:rgba(255,255,255,0.5);}
+.pricing-features{list-style:none;display:flex;flex-direction:column;gap:0.75rem;margin-bottom:2rem;}
+.pricing-features li{display:flex;align-items:center;gap:9px;font-size:0.9rem;color:var(--dark);}
+.pricing-card.featured .pricing-features li{color:rgba(255,255,255,0.85);}
+.feature-check{width:20px;height:20px;border-radius:50%;background:rgba(62,207,142,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.pricing-card.featured .feature-check{background:rgba(62,207,142,0.2);}
+.feature-check svg{width:11px;height:11px;stroke:var(--success);stroke-width:3;}
+.pricing-btn{width:100%;padding:0.85rem;border-radius:50px;font-size:0.9rem;font-weight:600;cursor:pointer;border:none;text-decoration:none;display:block;text-align:center;transition:var(--t);}
+.pricing-card:not(.featured) .pricing-btn{background:var(--navy);color:var(--white);box-shadow:0 4px 16px rgba(15,31,61,0.2);}
+.pricing-card:not(.featured) .pricing-btn:hover{background:var(--navy-mid);transform:translateY(-1px);}
+.pricing-card.featured .pricing-btn{background:var(--accent);color:var(--navy);box-shadow:0 4px 16px rgba(201,168,76,0.35);}
+.pricing-card.featured .pricing-btn:hover{background:#e0b84c;transform:translateY(-1px);}
+.domain-note{margin-top:2rem;text-align:center;font-size:0.85rem;color:var(--mid);background:var(--soft-white);border:1px dashed rgba(15,31,61,0.15);border-radius:var(--r-sm);padding:0.85rem 1.5rem;display:inline-block;}
+#projects{background:var(--off-white);}
+.projects-stack{position:relative;display:flex;flex-direction:column;padding-top:0.5rem;}
+.project-card{background:var(--white);border:1px solid rgba(15,31,61,0.07);border-radius:var(--r);overflow:hidden;transition:box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);}
+.project-card.project-stack-item{
+  position:sticky;
+  top:calc(84px + (var(--stack-index) - 1) * 14px);
+  z-index:var(--stack-index);
+  margin-bottom:2.5rem;
+  box-shadow:var(--shadow-md);
+}
+.project-card.project-stack-item:last-child{margin-bottom:0;}
+.project-card:hover{box-shadow:var(--shadow-3d);border-color:rgba(15,31,61,0.12);}
+.project-img{height:200px;background:var(--soft-white);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.project-img-wrap{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--soft-white);}
+.project-screenshot{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform 0.6s var(--ease);}
+.project-card:hover .project-screenshot{transform:scale(1.035);}
+.project-fallback{position:absolute;inset:0;display:none;align-items:center;justify-content:center;}
+.project-img-wrap.img-fallback .project-screenshot{display:none;}
+.project-img-wrap.img-fallback .project-fallback{display:flex;}
+.project-preview-mark{
+  width:72px;height:72px;border-radius:20px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.2);
+  display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:800;font-size:1.7rem;
+  color:var(--white);position:relative;z-index:1;transition:transform 0.4s var(--ease);backdrop-filter:blur(6px);
+}
+.project-card:hover .project-preview-mark{transform:scale(1.08) rotate(-4deg);}
+.project-category{
+  position:absolute;top:1rem;left:1rem;z-index:3;background:rgba(15,31,61,0.55);border:1px solid rgba(255,255,255,0.25);
+  color:#fff;font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.32rem 0.85rem;border-radius:50px;backdrop-filter:blur(6px);
+}
+.pv-grad{position:absolute;inset:0;}
+.pv-grad::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);background-size:32px 32px;}
+.pv-grad::after{content:'';position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,0.1);top:-100px;right:-80px;}
+.pv-1{background:linear-gradient(135deg,#0f1f3d,#243d72);}
+.pv-2{background:linear-gradient(135deg,#1a3260,#0f1f3d);}
+.pv-3{background:linear-gradient(135deg,#0f1f3d,#3d5a8a);}
+.pv-4{background:linear-gradient(135deg,#0f1f3d 40%,#7a6425);}
+.project-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,transparent 35%,rgba(15,31,61,0.82) 100%);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:1.2rem;}
+.project-card:hover .project-overlay{opacity:1;}
+.project-live-btn{background:var(--white);color:var(--navy);padding:0.5rem 1.2rem;border-radius:50px;font-size:0.82rem;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:6px;transform:translateY(6px);transition:transform 0.3s var(--ease);}
+.project-card:hover .project-live-btn{transform:translateY(0);}
+.project-body{padding:1.5rem;}
+.project-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:0.6rem;}
+.project-desc{font-size:0.9rem;color:var(--mid);line-height:1.65;margin-bottom:1rem;}
+.tech-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.tech-tag{background:var(--soft-white);border:1px solid rgba(15,31,61,0.08);padding:0.25rem 0.75rem;border-radius:50px;font-size:0.75rem;font-weight:600;color:var(--navy-muted);}
+.project-link{display:inline-flex;align-items:center;gap:6px;margin-top:1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy);text-decoration:none;transition:gap 0.2s;}
+.project-link:hover{gap:10px;color:var(--accent);}
+#about{background:var(--white);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.about-visual{display:flex;justify-content:center;position:relative;}
+.about-card{
+  width:280px;height:340px;background:var(--navy);border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;
+  position:relative;overflow:hidden;box-shadow:var(--shadow-lg);transform:perspective(700px) rotateY(5deg) rotateX(-2deg);transition:transform 0.5s var(--ease);
+}
+.about-card:hover{transform:perspective(700px) rotateY(2deg) rotateX(-1deg);}
+.about-card::before{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(201,168,76,0.08);top:-80px;right:-80px;}
+.about-avatar{width:110px;height:110px;border-radius:50%;overflow:hidden;background:rgba(255,255,255,0.1);border:3px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;z-index:1;box-shadow:0 10px 28px rgba(0,0,0,0.28);}
+.about-avatar img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+.about-avatar-fallback{display:none;width:100%;height:100%;align-items:center;justify-content:center;color:var(--white);}
+.about-avatar-fallback svg{width:44px;height:44px;stroke:rgba(255,255,255,0.6);}
+.about-card-name{font-family:'Playfair Display',serif;color:var(--white);font-size:1.1rem;font-weight:700;z-index:1;}
+.about-card-role{font-size:0.8rem;color:rgba(255,255,255,0.5);z-index:1;}
+.about-card-skills{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:0 1.5rem;z-index:1;}
+.about-card-skills span{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.7);font-size:0.72rem;font-weight:600;padding:0.25rem 0.7rem;border-radius:50px;border:1px solid rgba(255,255,255,0.1);}
+.about-float{position:absolute;background:var(--white);border-radius:12px;padding:0.75rem 1rem;box-shadow:var(--shadow-md);font-size:0.78rem;font-weight:600;display:flex;align-items:center;gap:7px;}
+.about-float-1{bottom:-20px;left:-30px;}
+.about-float-2{top:-15px;right:-30px;}
+.about-float-icon{width:28px;height:28px;border-radius:8px;background:var(--soft-white);display:flex;align-items:center;justify-content:center;}
+.about-float-icon svg{width:15px;height:15px;stroke:var(--navy);}
+.about-text p{font-size:1rem;color:var(--mid);line-height:1.8;margin-bottom:1.2rem;}
+.about-skills-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.5rem;}
+.skill-pill{background:var(--soft-white);border:1px solid rgba(15,31,61,0.09);color:var(--navy);padding:0.4rem 1rem;border-radius:50px;font-size:0.83rem;font-weight:600;}
+#why{background:var(--off-white);}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.why-card{background:var(--white);border:1px solid rgba(15,31,61,0.07);border-radius:var(--r);padding:1.8rem 1.5rem;text-align:center;transition:var(--t);}
+.why-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:rgba(15,31,61,0.12);}
+.why-icon{width:56px;height:56px;background:var(--soft-white);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;transition:var(--t);}
+.why-card:hover .why-icon{background:var(--navy);transform:scale(1.05);}
+.why-icon svg{width:26px;height:26px;stroke:var(--navy);transition:stroke 0.3s;}
+.why-card:hover .why-icon svg{stroke:var(--white);}
+.why-title{font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;}
+.why-desc{font-size:0.85rem;color:var(--mid);line-height:1.65;}
+#process{background:var(--navy);color:var(--white);}
+#process .section-tag{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);border-color:rgba(255,255,255,0.1);}
+#process .section-title{color:var(--white);}
+#process .section-sub{color:rgba(255,255,255,0.55);}
+#process .divider{background:linear-gradient(90deg,rgba(255,255,255,0.4),var(--accent));}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+.process-grid::before{content:'';position:absolute;top:36px;left:10%;right:10%;height:1px;background:rgba(255,255,255,0.12);z-index:0;}
+.process-step{text-align:center;position:relative;z-index:1;padding:0 1rem;}
+.step-num{
+  width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-family:'Playfair Display',serif;
+  font-size:1.5rem;font-weight:700;color:var(--white);transition:var(--t);position:relative;
+}
+.step-num::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px dashed rgba(255,255,255,0.1);}
+.process-step:hover .step-num{background:var(--accent);border-color:var(--accent);color:var(--navy);transform:scale(1.08);box-shadow:0 8px 24px rgba(201,168,76,0.35);}
+.step-title{font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:0.5rem;}
+.step-desc{font-size:0.84rem;color:rgba(255,255,255,0.5);line-height:1.6;}
+.delivery-note{text-align:center;margin-top:3rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-sm);padding:1rem 2rem;display:inline-block;font-size:0.9rem;color:rgba(255,255,255,0.6);width:100%;}
+.delivery-note strong{color:var(--accent);}
+#faq{background:var(--white);}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.faq-item{background:var(--off-white);border:1px solid rgba(15,31,61,0.07);border-radius:var(--r-sm);overflow:hidden;transition:var(--t);}
+.faq-item:hover{border-color:rgba(15,31,61,0.14);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.3rem 1.5rem;cursor:pointer;font-size:0.93rem;font-weight:600;color:var(--navy);}
+.faq-arrow{width:28px;height:28px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform 0.3s;box-shadow:var(--shadow-sm);}
+.faq-arrow svg{width:14px;height:14px;stroke:var(--navy);}
+.faq-item.open .faq-arrow{transform:rotate(180deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease;}
+.faq-item.open .faq-a{max-height:200px;}
+.faq-a p{padding:0 1.5rem 1.3rem;font-size:0.88rem;color:var(--mid);line-height:1.7;}
+#contact{background:var(--off-white);}
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start;}
+.contact-channels{display:flex;flex-direction:column;gap:1rem;margin-bottom:2.5rem;}
+.channel-btn{display:flex;align-items:center;gap:12px;padding:1rem 1.4rem;border-radius:var(--r-sm);text-decoration:none;font-size:0.9rem;font-weight:600;transition:var(--t);border:1px solid transparent;}
+.channel-btn svg{width:20px;height:20px;flex-shrink:0;}
+.channel-whatsapp{background:#25d366;color:var(--white);box-shadow:0 4px 16px rgba(37,211,102,0.25);}
+.channel-whatsapp:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,0.35);}
+.channel-call{background:var(--white);color:var(--navy);border-color:rgba(15,31,61,0.1);box-shadow:var(--shadow-sm);}
+.channel-call:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--navy);}
+.form-card{background:var(--navy);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-lg);padding:2.5rem;position:relative;}
+.form-card::before{content:'';position:absolute;top:-80px;right:-80px;width:220px;height:220px;border-radius:50%;background:rgba(201,168,76,0.1);}
+.form-card h3{font-family:'Playfair Display',serif;color:var(--white);font-size:1.4rem;font-weight:700;margin-bottom:0.7rem;position:relative;z-index:1;}
+.form-card p{font-size:0.9rem;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:1.8rem;position:relative;z-index:1;max-width:420px;}
+.form-card .btn-primary{background:var(--accent);color:var(--navy);box-shadow:0 8px 26px rgba(201,168,76,0.35);position:relative;z-index:1;}
+.form-card .btn-primary:hover{background:#e0b84c;}
+.form-card-note{margin-top:1.4rem;font-size:0.78rem;color:rgba(255,255,255,0.4);position:relative;z-index:1;}
+#final-cta{background:var(--navy);text-align:center;padding:100px 6%;position:relative;overflow:hidden;}
+.cta-glow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(201,168,76,0.08) 0%,transparent 70%);}
+#final-cta .section-title{color:var(--white);position:relative;z-index:1;}
+#final-cta .section-sub{color:rgba(255,255,255,0.5);margin:0 auto 2.5rem;position:relative;z-index:1;}
+#final-cta .btn-primary{background:var(--accent);color:var(--navy);box-shadow:0 8px 32px rgba(201,168,76,0.35);font-size:1rem;padding:1rem 2.8rem;position:relative;z-index:1;}
+#final-cta .btn-primary:hover{background:#e0b84c;transform:translateY(-3px);}
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.07);padding:2rem 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-logo{font-family:'Playfair Display',serif;color:rgba(255,255,255,0.8);font-size:1.1rem;font-weight:700;}
+.footer-logo span{color:var(--accent);}
+.footer-copy{font-size:0.8rem;color:rgba(255,255,255,0.35);}
+.footer-links a{color:rgba(255,255,255,0.4);text-decoration:none;font-size:0.8rem;transition:color 0.2s;}
+.footer-links a:hover{color:#fff;}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease, transform 0.6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:0.1s;}
+.reveal-delay-2{transition-delay:0.2s;}
+.reveal-delay-3{transition-delay:0.3s;}
+.reveal-delay-4{transition-delay:0.4s;}
+@media(max-width:1024px){
+  .pricing-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto;}
+  .why-grid{grid-template-columns:1fr 1fr;}
+  .process-grid{grid-template-columns:1fr 1fr;gap:2rem;}
+  .process-grid::before{display:none;}
+  .faq-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .about-grid{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-visual{display:none;}
+  .hero-stats{gap:1.5rem;}
+  .why-grid{grid-template-columns:1fr 1fr;}
+  section{padding:70px 5%;}
+  .project-card.project-stack-item{
+    top:calc(72px + (var(--stack-index) - 1) * 8px);
+    margin-bottom:1.5rem;
+  }
+  .project-img-wrap{aspect-ratio:4/3;}
+}
+@media(max-width:500px){
+  .why-grid{grid-template-columns:1fr;}
+  .process-grid{grid-template-columns:1fr;}
+  .hero-btns{flex-direction:column;}
+  .hero-btns a{text-align:center;justify-content:center;}
+  .about-card{width:100%;max-width:280px;}
+  .about-float{padding:0.6rem 0.8rem;font-size:0.72rem;}
+  .about-float-1{bottom:-14px;left:-8px;}
+  .about-float-2{top:-12px;right:-8px;}
+  .form-card{padding:1.6rem;}
+  .channel-btn{padding:0.9rem 1.1rem;font-size:0.85rem;}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="#hero" class="logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="7" height="7" rx="1.5" fill="#fff" opacity="0.9"/>
+        <rect x="12" y="1" width="7" height="7" rx="1.5" fill="#c9a84c"/>
+        <rect x="1" y="12" width="7" height="7" rx="1.5" fill="#c9a84c" opacity="0.5"/>
+        <rect x="12" y="12" width="7" height="7" rx="1.5" fill="#fff" opacity="0.9"/>
+      </svg>
+    </div>
+    <span class="logo-text">Pixel <span>&</span> Co.</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact" class="nav-cta">Get a Website</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#projects" onclick="closeMenu()">Projects</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#process" onclick="closeMenu()">Process</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#contact" onclick="closeMenu()">Get a Website →</a>
+</div>
+
+<section id="hero">
+  <div class="hero-bg-shapes">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span>Available for new projects</div>
+      <h1 class="hero-title">I Build <em>High-Converting</em><br/>Websites for Businesses</h1>
+      <p class="hero-sub">Modern, fast, and designed to turn visitors into customers. Built with precision, delivered in ~2 weeks.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          View My Work
+        </a>
+        <a href="#contact" class="btn-outline">Get a Website →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">~2wk</span><span class="stat-label">Delivery Time</span></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Mobile-First</span></div>
+        <div class="stat"><span class="stat-num">6+</span><span class="stat-label">Live Projects</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-mockup">
+        <div class="mockup-bar">
+          <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+          <div class="mockup-url">h3a.in</div>
+        </div>
+        <div class="mockup-screenshot-wrap">
+          <img class="mockup-screenshot" src="https://api.microlink.io/?url=https%3A%2F%2Fwww.h3a.in&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=900" alt="Real client website built by Pixel & Co." decoding="async" onerror="this.closest('.mockup-screenshot-wrap').classList.add('img-fallback')"/>
+          <div class="mockup-fallback">
+            <div class="mockup-hero-strip"><span class="mockup-hero-text">Your Business — Online</span></div>
+            <div class="mockup-cards">
+              <div class="mockup-card-item"><div class="mockup-icon"></div><div class="mockup-line"></div></div>
+              <div class="mockup-card-item"><div class="mockup-icon"></div><div class="mockup-line"></div></div>
+              <div class="mockup-card-item"><div class="mockup-icon"></div><div class="mockup-line"></div></div>
+            </div>
+            <div class="mockup-rows">
+              <div class="mockup-row"></div><div class="mockup-row"></div><div class="mockup-row"></div>
+            </div>
+          </div>
+        </div>
+        <div class="mockup-badge"><span class="dot"></span>Live client project — H3A</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-tag">Services & Pricing</span>
+      <h2 class="section-title">Simple, Transparent Pricing</h2>
+      <div class="divider center"></div>
+      <p class="section-sub">No hidden fees. No surprises. Pick the package that fits your business and I'll take care of the rest.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal reveal-delay-1">
+        <div class="pricing-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div class="pricing-name">Basic</div>
+        <div class="pricing-price"><span class="currency">₹</span>8,999</div>
+        <div class="pricing-note">+ domain if required</div>
+        <ul class="pricing-features">
+          <li><div class="feature-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Single-page website</li>
+          <li><div class="feature-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Mobile responsive</li>
+          <li><div class="feature-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Clean, modern UI</li>
+          <li><div class="feature-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Contact form</li>
+          <li><div class="feature-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>~2 weeks delivery</li>
+        </ul>
+        <a href="#contact" class="pricing-btn">Get Started</a>
+      </div>
+      <div class="pricing-card featured reveal reveal-delay-2">
+        <div class="featured-badge">Most Popular</div>
+        <div class="pricing-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <div class="pricing-name">Premium</div>
+        <div class="pricing-price"><span class="currency">₹</span>11,999</div>
+        <div class="pricing-note">+ domain required</div>
+        <ul class="pricing-features">
+          <li><div class="feature-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Multi-page website</li>
+          <li><div class="feature-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Advanced UI design</li>
+          <li><div class="feature-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Better UX & animations</li>
+          <li><div class="feature-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>SEO basics included</li>
+          <li><div class="feature-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>~2 weeks delivery</li>
+        </ul>
+        <a href="#contact" class="pricing-btn">Get Started</a>
+      </div>
+      <div class="pricing-card reveal reveal-delay-3">
+        <div class="pricing-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></div>
+        <div class="pricing-name">Advanced</div>
+        <div class="pricing-price"><span class="currency">₹</span>14,999</div>
+        <div class="pricing-note">+ domain required</div>
+        <ul class="pricing-features">
+          <li><div class="feature-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Appointment booking system</li>
+          <li><div class="feature-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Admin dashboard</li>
+          <li><div class="feature-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Confirmation workflow</li>
+          <li><div class="feature-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Full multi-page site</li>
+          <li><div class="feature-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>~2 weeks delivery</li>
+        </ul>
+        <a href="#contact" class="pricing-btn">Get Started</a>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem;">
+      <span class="domain-note">📌 Domain cost depends on your choice and is <strong>not included</strong> in the package price.</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">Projects</span>
+      <h2 class="section-title">Work I'm Proud Of</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Real businesses, real websites — built to represent, attract, and convert. Scroll to see each project stack.</p>
+    </div>
+    <div class="projects-stack">
+
+      <!-- Project 1: Oriental Polyclinics -->
+      <div class="project-card project-stack-item" style="--stack-index:1;">
+        <div class="project-img-wrap">
+          <img class="project-screenshot" src="https://api.microlink.io/?url=https%3A%2F%2Fwww.orientalchandrasekarclinic.com%2F&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=900" alt="Oriental Polyclinics website preview" width="1280" height="900" decoding="async" onerror="this.closest('.project-img-wrap').classList.add('img-fallback')"/>
+          <div class="project-fallback pv-grad pv-1"><div class="project-preview-mark">OP</div></div>
+          <span class="project-category">Healthcare</span>
+          <div class="project-overlay">
+            <a href="https://www.orientalchandrasekarclinic.com/" target="_blank" rel="noopener noreferrer" class="project-live-btn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              View Live Site
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-name">Oriental Polyclinics</div>
+          <p class="project-desc">A professional multi-specialty clinic website with service listings, doctor profiles, and a seamless appointment experience. Designed to build patient trust from the first visit.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML/CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Responsive</span>
+            <span class="tech-tag">Healthcare</span>
+          </div>
+          <a href="https://www.orientalchandrasekarclinic.com/" target="_blank" rel="noopener noreferrer" class="project-link">
+            View Live Site
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2: Citrine Dentistry -->
+      <div class="project-card project-stack-item" style="--stack-index:2;">
+        <div class="project-img-wrap">
+          <img class="project-screenshot" src="https://api.microlink.io/?url=https%3A%2F%2Fcitrinedentistry.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=900" alt="Citrine Dentistry website preview" width="1280" height="900" decoding="async" onerror="this.closest('.project-img-wrap').classList.add('img-fallback')"/>
+          <div class="project-fallback pv-grad pv-2"><div class="project-preview-mark">CD</div></div>
+          <span class="project-category">Dental Clinic</span>
+          <div class="project-overlay">
+            <a href="https://citrinedentistry.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-live-btn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              View Live Site
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-name">Citrine Dentistry</div>
+          <p class="project-desc">A sleek dental clinic website built to showcase services, team, and patient-first care. Clean design with smooth UX to boost enquiries and appointment bookings.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Vercel</span>
+            <span class="tech-tag">Tailwind</span>
+            <span class="tech-tag">Dental</span>
+          </div>
+          <a href="https://citrinedentistry.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+            View Live Site
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3: Evolve 360 Fitness -->
+      <div class="project-card project-stack-item" style="--stack-index:3;">
+        <div class="project-img-wrap">
+          <img class="project-screenshot" src="https://api.microlink.io/?url=https%3A%2F%2Fevolve360fitness.in%2F&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=900" alt="Evolve 360 Fitness website preview" width="1280" height="900" decoding="async" onerror="this.closest('.project-img-wrap').classList.add('img-fallback')"/>
+          <div class="project-fallback pv-grad pv-3"><div class="project-preview-mark">E360</div></div>
+          <span class="project-category">Fitness & Wellness</span>
+          <div class="project-overlay">
+            <a href="https://evolve360fitness.in/" target="_blank" rel="noopener noreferrer" class="project-live-btn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              View Live Site
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-name">Evolve 360 Fitness</div>
+          <p class="project-desc">A dynamic website for a fitness studio, built to showcase programs, trainers, and membership plans while making it effortless for new members to get in touch and sign up.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Responsive</span>
+            <span class="tech-tag">Fitness</span>
+            <span class="tech-tag">Lead Gen</span>
+          </div>
+          <a href="https://evolve360fitness.in/" target="_blank" rel="noopener noreferrer" class="project-link">
+            View Live Site
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 4: Palkalai Dental Clinic -->
+      <div class="project-card project-stack-item" style="--stack-index:4;">
+        <div class="project-img-wrap">
+          <img class="project-screenshot" src="https://api.microlink.io/?url=https%3A%2F%2Fwww.palkalaidentalclinic.com&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=900" alt="Palkalai Dental Clinic website preview" width="1280" height="900" decoding="async" onerror="this.closest('.project-img-wrap').classList.add('img-fallback')"/>
+          <div class="project-fallback pv-grad pv-4"><div class="project-preview-mark">PD</div></div>
+          <span class="project-category">Dental Clinic</span>
+          <div class="project-overlay">
+            <a href="https://www.palkalaidentalclinic.com" target="_blank" rel="noopener noreferrer" class="project-live-btn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              View Live Site
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-name">Palkalai Dental Clinic</div>
+          <p class="project-desc">A trust-first website for a dental practice, presenting treatments, doctor credentials, and an easy path to booking — designed to reduce patient hesitation and drive enquiries.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Healthcare</span>
+            <span class="tech-tag">Responsive</span>
+            <span class="tech-tag">Appointments</span>
+          </div>
+          <a href="https://www.palkalaidentalclinic.com" target="_blank" rel="noopener noreferrer" class="project-link">
+            View Live Site
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 5: H3A -->
+      <div class="project-card project-stack-item" style="--stack-index:5;">
+        <div class="project-img-wrap">
+          <img class="project-screenshot" src="https://api.microlink.io/?url=https%3A%2F%2Fwww.h3a.in&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=900" alt="H3A architecture studio website preview" width="1280" height="900" decoding="async" onerror="this.closest('.project-img-wrap').classList.add('img-fallback')"/>
+          <div class="project-fallback pv-grad pv-1"><div class="project-preview-mark">H3A</div></div>
+          <span class="project-category">Architecture Studio</span>
+          <div class="project-overlay">
+            <a href="https://www.h3a.in" target="_blank" rel="noopener noreferrer" class="project-live-btn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              View Live Site
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-name">H3A</div>
+          <p class="project-desc">A refined portfolio site for an architecture and design studio, structured around strong visuals and a clean grid to let the studio's projects speak for themselves.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Architecture</span>
+            <span class="tech-tag">Portfolio</span>
+            <span class="tech-tag">Editorial UI</span>
+          </div>
+          <a href="https://www.h3a.in" target="_blank" rel="noopener noreferrer" class="project-link">
+            View Live Site
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 6: Spatio -->
+      <div class="project-card project-stack-item" style="--stack-index:6;">
+        <div class="project-img-wrap">
+          <img class="project-screenshot" src="https://api.microlink.io/?url=https%3A%2F%2Fspatio-ruby.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=900" alt="Spatio design portfolio website preview" width="1280" height="900" decoding="async" onerror="this.closest('.project-img-wrap').classList.add('img-fallback')"/>
+          <div class="project-fallback pv-grad pv-2"><div class="project-preview-mark">SP</div></div>
+          <span class="project-category">Design Portfolio</span>
+          <div class="project-overlay">
+            <a href="https://spatio-ruby.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-live-btn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              View Live Site
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-name">Spatio</div>
+          <p class="project-desc">A modern, animation-forward site built to give a design-led brand a distinctive online identity — fast, sleek, and built with a contemporary front-end stack.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Vercel</span>
+            <span class="tech-tag">Motion UI</span>
+          </div>
+          <a href="https://spatio-ruby.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+            View Live Site
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div style="position:relative;">
+          <div class="about-card">
+            <div class="about-avatar">
+              <!-- Replace src below with your real photo, e.g. /assets/profile.jpg -->
+              <img src="/assets/profile.jpg" alt="Founder of Pixel & Co." loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
+              <div class="about-avatar-fallback">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+              </div>
+            </div>
+            <div class="about-card-name">Pixel & Co.</div>
+            <div class="about-card-role">Founder & Web Designer</div>
+            <div class="about-card-skills">
+              <span>HTML/CSS</span><span>React</span><span>JavaScript</span><span>UI/UX</span>
+            </div>
+          </div>
+          <div class="about-float about-float-1">
+            <div class="about-float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+            <span style="font-size:0.8rem;font-weight:700;color:var(--navy);">Conversion-Focused</span>
+          </div>
+          <div class="about-float about-float-2">
+            <div class="about-float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <span style="font-size:0.8rem;font-weight:700;color:var(--navy);">~2 week delivery</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Developer Focused on Business Results</h2>
+        <div class="divider"></div>
+        <p>I'm a freelance web developer specialising in building fast, modern, and conversion-driven websites for businesses. Every pixel is placed with purpose — to help your business look credible, attract the right customers, and grow online.</p>
+        <p>From clinics to fitness studios to design studios, I've helped businesses establish a strong digital presence without the agency price tag. I work closely with each client to understand their goals and deliver websites that truly work.</p>
+        <div class="about-skills-list">
+          <span class="skill-pill">React</span>
+          <span class="skill-pill">HTML / CSS</span>
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">Tailwind CSS</span>
+          <span class="skill-pill">Vercel</span>
+          <span class="skill-pill">UI/UX Design</span>
+          <span class="skill-pill">Responsive Design</span>
+          <span class="skill-pill">Google Forms</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-tag">Why Choose Me</span>
+      <h2 class="section-title">What You Get When You Work With Me</h2>
+      <div class="divider center"></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="why-title">Fast Delivery</div>
+        <p class="why-desc">Most projects delivered within 2 weeks. No endless waiting — just results, fast.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <div class="why-title">Mobile-First Design</div>
+        <p class="why-desc">Built for mobile from the ground up — because most of your customers browse on their phones.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="why-title">Clean Modern UI</div>
+        <p class="why-desc">No templates, no clutter. Every site is custom-designed to match your brand and impress visitors.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-4">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="why-title">Business Results</div>
+        <p class="why-desc">Every design decision is made with conversions in mind — turning visitors into customers for your business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-tag">My Process</span>
+      <h2 class="section-title">How We Build Your Website</h2>
+      <div class="divider center"></div>
+      <p class="section-sub">A simple, transparent process with no surprises.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal reveal-delay-1">
+        <div class="step-num">01</div>
+        <div class="step-title">Requirement Discussion</div>
+        <p class="step-desc">We chat about your business, goals, and what you need from your website.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="step-num">02</div>
+        <div class="step-title">Design & Development</div>
+        <p class="step-desc">I design and build your website — clean, fast, and tailored to your brand.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="step-num">03</div>
+        <div class="step-title">Review & Revisions</div>
+        <p class="step-desc">You review the site and I refine it based on your feedback until you're happy.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-4">
+        <div class="step-num">04</div>
+        <div class="step-title">Final Delivery</div>
+        <p class="step-desc">Your website goes live. I hand everything over and make sure it's running perfectly.</p>
+      </div>
+    </div>
+    <p class="delivery-note">⏱ Typical delivery time: <strong>around 2 weeks</strong> from the start of the project.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-tag">FAQ</span>
+      <h2 class="section-title">Questions You Might Have</h2>
+      <div class="divider center"></div>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-q">How long does it take to build my website?<div class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div></div>
+        <div class="faq-a"><p>Around 2 weeks depending on the complexity of the project. Simpler landing pages can be done faster. I'll give you a clear timeline at the start.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1" onclick="toggleFaq(this)">
+        <div class="faq-q">Is the domain included in the price?<div class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div></div>
+        <div class="faq-a"><p>No — domain cost depends on your choice (e.g., .com, .in, .co.in) and is billed separately. I'll guide you on picking the right domain for your business.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2" onclick="toggleFaq(this)">
+        <div class="faq-q">Do you provide revisions?<div class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div></div>
+        <div class="faq-a"><p>Yes! Limited revisions are included in every package. You'll get a chance to review and request changes before the final delivery.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3" onclick="toggleFaq(this)">
+        <div class="faq-q">Can I upgrade my package later?<div class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div></div>
+        <div class="faq-a"><p>Absolutely. You can start with a Basic site and upgrade to Premium or Advanced anytime. Just reach out and we'll discuss the upgrade cost.</p></div>
+      </div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <div class="faq-q">Do I need to provide content and images?<div class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div></div>
+        <div class="faq-a"><p>Yes — you'll need to provide your business content (text, logo, images). I can guide you on what's needed and help you structure it properly for the web.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1" onclick="toggleFaq(this)">
+        <div class="faq-q">Will my website be mobile-friendly?<div class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div></div>
+        <div class="faq-a"><p>100%. Every website I build is fully responsive and tested on mobile, tablet, and desktop. Mobile-first design is a core part of my process.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2" onclick="toggleFaq(this)">
+        <div class="faq-q">What if I need changes after delivery?<div class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div></div>
+        <div class="faq-a"><p>Post-delivery changes are available at a small additional charge depending on the scope. I'm always reachable on WhatsApp for quick support.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3" onclick="toggleFaq(this)">
+        <div class="faq-q">Can you add a booking system to any package?<div class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div></div>
+        <div class="faq-a"><p>Appointment booking is included in the Advanced package. If you need it added to a Basic or Premium site, we can discuss a custom quote.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">Contact</span>
+      <h2 class="section-title">Let's Build Your Website 🚀</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Ready to get started? Reach out on WhatsApp for a quick chat, or fill the form and I'll get back to you within 24 hours.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-channels">
+          <a href="https://wa.me/919080764307" target="_blank" rel="noopener noreferrer" class="channel-btn channel-whatsapp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat on WhatsApp
+          </a>
+          <a href="tel:+919080764307" class="channel-btn channel-call">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.7 19.79 19.79 0 0 1 1.61 2.1 2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.08 6.08l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 15.92z"/></svg>
+            Call: +91 90807 64307
+          </a>
+        </div>
+        <div style="background:var(--white);border:1px solid rgba(15,31,61,0.07);border-radius:var(--r-sm);padding:1.5rem;">
+          <div style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">📍 Based in Chennai, India</div>
+          <div style="font-size:0.83rem;color:var(--mid);line-height:1.65;">Serving clients across India. Remote-friendly — I work with businesses anywhere online.</div>
+        </div>
+      </div>
+      <div class="form-card reveal reveal-delay-1">
+        <h3>Start Your Website Project</h3>
+        <p>Tell me a bit about your business and what you need. I'll get back to you within 24 hours with next steps and a clear quote.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScskjCI8xTPjve_MWxtKe08VUGteWWGy1iwP0rCToPrNcpozQ/viewform" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Website Enquiry Form →
+        </a>
+        <div class="form-card-note">Takes less than 2 minutes to fill out.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="final-cta">
+  <div class="cta-glow"></div>
+  <div class="container" style="position:relative;z-index:1;text-align:center;">
+    <span class="section-tag" style="background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.5);border-color:rgba(255,255,255,0.1);">Ready?</span>
+    <h2 class="section-title" style="color:#fff;margin-top:0.5rem;">Ready to Take Your Business Online?</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.5);margin:0 auto 2.5rem;">Let's build something that works — clean, fast, and built to convert. Starting at just ₹8,999.</p>
+    <a href="#contact" class="btn-primary">Get Started Today →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Pixel <span>&</span> Co.</div>
+  <div class="footer-copy">© 2025 Pixel & Co. · All rights reserved · Chennai, India</div>
+  <div class="footer-links" style="display:flex;gap:1.5rem;">
+    <a href="https://wa.me/919080764307" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a href="tel:+919080764307">Call</a>
+    <a href="#contact">Enquire</a>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>30);
+},{ passive:true });
+
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('active');
+}
+function closeMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('active');
+}
+
+function toggleFaq(el){
+  const isOpen=el.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)el.classList.add('open');
+}
+
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+/* Note: project cards are intentionally NOT observed above — they render
+   immediately with no fade/slide-in and no lazy image loading. */
+
+document.querySelectorAll('.pricing-card,.why-card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const rect=card.getBoundingClientRect();
+    const cx=rect.left+rect.width/2;
+    const cy=rect.top+rect.height/2;
+    const dx=(e.clientX-cx)/(rect.width/2);
+    const dy=(e.clientY-cy)/(rect.height/2);
+    const tiltX=dy*4;
+    const tiltY=-dx*4;
+    card.style.transform=`perspective(900px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-6px)`;
+    card.style.transition='transform 0.1s ease';
+  });
+  card.addEventListener('mouseleave',()=>{
+    card.style.transform='';
+    card.style.transition='all 0.35s cubic-bezier(0.4,0,0.2,1)';
+  });
+});
+
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(s=>{
+    if(window.scrollY>=s.offsetTop-120)current=s.id;
+  });
+  navLinks.forEach(a=>{
+    a.style.color=a.getAttribute('href')==='#'+current?'var(--navy)':'';
+  });
+},{ passive:true });
+</script>
+</body>
+</html>v
